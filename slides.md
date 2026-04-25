@@ -2,7 +2,6 @@
 marp: true
 theme: randomizedConsensus
 paginate: true
-footer: confidential & proprietary
 ---
 
 <!-- _class: title -->
