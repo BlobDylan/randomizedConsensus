@@ -79,6 +79,11 @@ section.title::after {
   display: none;
 }
 
+section.title :is(h1, h2, h3, h4, h5, h6) strong,
+section.title strong {
+  color: var(--bg-light);
+}
+
 section.invert {
   background-color: var(--bg-dark);
   color: var(--text-dim-dark);

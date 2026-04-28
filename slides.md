@@ -136,6 +136,8 @@ Breaking Down the FLP Theorem
 
 # FLP Theorem
 
+### Fischer Lynch Peterson
+
 Deterministic consensus is impossible in the asynchronous model even for binary inputs and at most one crash failure.
 
 </div>
