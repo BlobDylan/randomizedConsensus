@@ -2,7 +2,7 @@
 marp: true
 theme: randomizedConsensus
 paginate: true
-footer: confidential & proprietary
+footer: Daniel & Dylan
 ---
 
 ## A different playing field
@@ -93,6 +93,12 @@ Each process keeps:
 It runs a loop of three phases until it decides.
 
 **Intuition:** _announce → check → adopt-or-advance._ The race never speeds up — it just keeps cycling until a leader pulls clearly ahead.
+
+---
+
+## CIL — Algorithm overview
+
+![width:500](/ChorIsraeliLiAssets/chor_israeli_li_algorithm.png)
 
 ---
 
@@ -286,6 +292,12 @@ Init: $\text{mark}[0][0] = \text{mark}[1][0] = \text{true}$. Loop the three phas
 
 ---
 
+## Chandra — Algorithm overview
+
+## ![width:450px](/ChandraBrachaRachmanAssets/chandra_algorithm.png)
+
+---
+
 ## Chandra — Phase 1: Announce
 
 ### Steps
@@ -417,6 +429,12 @@ The weak shared coin Chandra calls every round.
 Each process repeatedly votes (Phase 1) until a global threshold is crossed, then takes one final reading (Phase 2) and outputs a majority bit.
 
 **Intuition:** generate so many fair votes that the law of large numbers builds a $\Theta(n)$-sized majority — too large for the adversary's $n - 1$ hidden votes to flip.
+
+---
+
+## BR — Algorithm overview
+
+![width:500px](/ChandraBrachaRachmanAssets/bracha_rachman_algorithm.png)
 
 ---
 
