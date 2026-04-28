@@ -130,9 +130,23 @@ Breaking Down the FLP Theorem
 
 ---
 
+<!-- _class: split -->
+
+<div class="col">
+
 # FLP Theorem
 
 Deterministic consensus is impossible in the asynchronous model even for binary inputs and at most one crash failure.
+
+</div>
+
+<div class="col">
+
+![width:150px](/FLPAssets/fischer_portrait.jpg)
+![width:150px](/FLPAssets/lynch_portrait.jpg)
+![width:150px](/FLPAssets/peterson_portrait.jpeg)
+
+</div>
 
 ---
 
@@ -959,3 +973,26 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 ![](/BenOrAssets/slide22.png)
 
 </div>
+
+---
+
+## Lecture Agenda
+
+### Rolling the Dice on Agreement
+
+- ~~**Part 1: The Consensus Problem & The FLP Wall**~~
+  - Defining the three pillars and the deterministic impossibility.
+- ~~**Part 2: Cheating the System with Randomization**~~
+  - Models of the adversary and Ben-Or's pioneering protocol.
+- **Part 3: The Shared Memory Race**
+  - Wait-free protocols and defeating adversaries with shared coins.
+
+---
+
+<!-- _class: title -->
+
+# Part 3
+
+## The Shared Memory Race
+
+Three algorithms, one consistent template.
