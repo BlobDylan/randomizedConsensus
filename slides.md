@@ -478,6 +478,16 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 ---
 
+## Recap — Part 1
+
+### Consensus & The FLP Wall
+
+- **The Goal:** Agreeing on a single value (Agreement, Termination, Validity).
+- **Asynchrony:** No timing assumptions; messages can be delayed indefinitely.
+- **FLP Impossibility:** No deterministic solution with even 1 crash failure.
+
+---
+
 ## Lecture Agenda
 
 ### Rolling the Dice on Agreement
@@ -976,6 +986,19 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 ---
 
+## Recap — Part 2
+
+### Cheating the System
+
+- **Breaking the Wall:** Using randomization to achieve "Probabilistic Termination."
+- **Adversary Models:** Strong (sees everything) vs. Weak (blind to internal coin flips).
+- **Ben-Or's Protocol:**
+  - $t < n/2$ resilience in message-passing.
+  - Two-stage rounds (Voting & Ratification) + local coins.
+  - **The Limit:** Can require exponential expected time to terminate.
+
+---
+
 ## Lecture Agenda
 
 ### Rolling the Dice on Agreement
@@ -1094,15 +1117,13 @@ It runs a loop of three phases until it decides.
 
 <div class="col">
 
-## Algorithm
+## CIL - Algorithm
 
 ![width:500](/ChorIsraeliLiAssets/chor_israeli_li_algorithm.png)
 
 </div>
 
 <div class="col">
-
-## Intuition
 
 ![](/ChorIsraeliLiAssets/chor_israeli_li_visualization.png)
 
@@ -1304,15 +1325,13 @@ Init: $\text{mark}[0][0] = \text{mark}[1][0] = \text{true}$. Loop the three phas
 
 <div class="col">
 
-## Algorithm
+## Chandra - Algorithm
 
 ![width:450px](/ChandraBrachaRachmanAssets/chandra_algorithm.png)
 
 </div>
 
 <div class="col">
-
-## Intuition
 
 ![](/ChandraBrachaRachmanAssets/chandra_visualization.png)
 
@@ -1458,15 +1477,13 @@ Each process repeatedly votes (Phase 1) until a global threshold is crossed, the
 
 <div class="col">
 
-## Algorithm
+## BR - Algorithm
 
 ![width:450px](/ChandraBrachaRachmanAssets/bracha_rachman_algorithm.png)
 
 </div>
 
 <div class="col">
-
-## Intuition
 
 ![](/ChandraBrachaRachmanAssets/bracha_rachman_visualization.png)
 
@@ -1557,3 +1574,14 @@ What $P$ sees = $\text{common} + \text{extra}_P - \text{hidden}_P$.
 - **Chandra** — binary consensus _framework_ calling a coin per round, $O(1)$ rounds.
 - **Bracha–Rachman** — the coin: $n^2$ fair votes drown $n - 1$ hidden ones.
 - **Together:** $O(n^2 \log n)$ wait-free binary consensus, strong adversary.
+
+---
+
+<!-- _class: title -->
+
+# Thank You!
+
+## Any Questions?
+
+**Daniel & Dylan**
+Overcoming impossibility through randomization

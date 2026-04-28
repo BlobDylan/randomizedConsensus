@@ -96,7 +96,12 @@ section.split {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: min-content auto;
   grid-column-gap: 60px;
-  align-items: start;
+  align-items: center;
+}
+
+img {
+  display: block;
+  margin: auto;
 }
 
 section.quad {
