@@ -144,9 +144,9 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![width:150px](/FLPAssets/fischer_portrait.jpg)
-![width:150px](/FLPAssets/lynch_portrait.jpg)
-![width:150px](/FLPAssets/peterson_portrait.jpeg)
+![width:150px](FLPAssets/fischer_portrait.jpg)
+![width:150px](FLPAssets/lynch_portrait.jpg)
+![width:150px](FLPAssets/peterson_portrait.jpeg)
 
 </div>
 
@@ -164,7 +164,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/FLPAssets/slide1.png)
+![](FLPAssets/slide1.png)
 
 </div>
 
@@ -182,7 +182,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/FLPAssets/slide2.png)
+![](FLPAssets/slide2.png)
 
 </div>
 
@@ -200,7 +200,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/FLPAssets/slide3.png)
+![](FLPAssets/slide3.png)
 
 </div>
 
@@ -220,7 +220,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/FLPAssets/slide4.png)
+![](FLPAssets/slide4.png)
 
 </div>
 
@@ -241,7 +241,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/FLPAssets/slide5.png)
+![](FLPAssets/slide5.png)
 
 </div>
 
@@ -260,7 +260,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/FLPAssets/slide6.png)
+![](FLPAssets/slide6.png)
 
 </div>
 
@@ -279,7 +279,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/FLPAssets/slide7.png)
+![](FLPAssets/slide7.png)
 
 </div>
 
@@ -297,7 +297,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/FLPAssets/slide8.png)
+![](FLPAssets/slide8.png)
 
 </div>
 
@@ -315,7 +315,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/FLPAssets/slide9.png)
+![](FLPAssets/slide9.png)
 
 </div>
 
@@ -335,7 +335,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/FLPAssets/slide10.png)
+![](FLPAssets/slide10.png)
 
 </div>
 
@@ -353,7 +353,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/FLPAssets/slide11.png)
+![](FLPAssets/slide11.png)
 
 </div>
 
@@ -372,7 +372,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/FLPAssets/slide12.png)
+![](FLPAssets/slide12.png)
 
 </div>
 
@@ -390,7 +390,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/FLPAssets/slide13.png)
+![](FLPAssets/slide13.png)
 
 </div>
 
@@ -409,7 +409,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/FLPAssets/slide14.png)
+![](FLPAssets/slide14.png)
 
 </div>
 
@@ -427,7 +427,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/FLPAssets/slide15.png)
+![](FLPAssets/slide15.png)
 
 </div>
 
@@ -446,7 +446,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/FLPAssets/slide16.png)
+![](FLPAssets/slide16.png)
 
 </div>
 
@@ -464,7 +464,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/FLPAssets/slide17.png)
+![](FLPAssets/slide17.png)
 
 </div>
 
@@ -524,7 +524,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/BenOrAssets/michael_ben_or_portrait.jpeg)
+![](BenOrAssets/michael_ben_or_portrait.jpeg)
 
 </div>
 
@@ -543,7 +543,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/BenOrAssets/ben_or_algorithm.png)
+![](BenOrAssets/ben_or_algorithm.png)
 
 </div>
 
@@ -561,7 +561,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/BenOrAssets/slide1.png)
+![](BenOrAssets/slide1.png)
 
 </div>
 
@@ -579,7 +579,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/BenOrAssets/slide2.png)
+![](BenOrAssets/slide2.png)
 
 </div>
 
@@ -598,7 +598,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/BenOrAssets/slide3.png)
+![](BenOrAssets/slide3.png)
 
 </div>
 
@@ -618,7 +618,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/BenOrAssets/slide4.png)
+![](BenOrAssets/slide4.png)
 
 </div>
 
@@ -638,7 +638,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/BenOrAssets/slide5.png)
+![](BenOrAssets/slide5.png)
 
 </div>
 
@@ -658,7 +658,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/BenOrAssets/slide6.png)
+![](BenOrAssets/slide6.png)
 
 </div>
 
@@ -676,7 +676,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/BenOrAssets/slide7.png)
+![](BenOrAssets/slide7.png)
 
 </div>
 
@@ -695,7 +695,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/BenOrAssets/slide8.png)
+![](BenOrAssets/slide8.png)
 
 </div>
 
@@ -714,7 +714,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/BenOrAssets/slide9.png)
+![](BenOrAssets/slide9.png)
 
 </div>
 
@@ -733,27 +733,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/BenOrAssets/slide10.png)
-
-</div>
-
----
-
-<!-- _class: split -->
-
-<div class="col">
-
-## Example - Round 2
-
-- **Step 1:** Each node once again broadcasts, and then collects $3$ values
-- In this case we have a proposal from the top right node
-- Recall some messages may be delayed or crash
-
-</div>
-
-<div class="col">
-
-![](/BenOrAssets/slide11.png)
+![](BenOrAssets/slide10.png)
 
 </div>
 
@@ -773,7 +753,27 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/BenOrAssets/slide12.png)
+![](BenOrAssets/slide11.png)
+
+</div>
+
+---
+
+<!-- _class: split -->
+
+<div class="col">
+
+## Example - Round 2
+
+- **Step 1:** Each node once again broadcasts, and then collects $3$ values
+- In this case we have a proposal from the top right node
+- Recall some messages may be delayed or crash
+
+</div>
+
+<div class="col">
+
+![](BenOrAssets/slide12.png)
 
 </div>
 
@@ -791,7 +791,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/BenOrAssets/slide13.png)
+![](BenOrAssets/slide13.png)
 
 </div>
 
@@ -810,7 +810,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/BenOrAssets/slide14.png)
+![](BenOrAssets/slide14.png)
 
 </div>
 
@@ -829,7 +829,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/BenOrAssets/slide15.png)
+![](BenOrAssets/slide15.png)
 
 </div>
 
@@ -848,7 +848,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/BenOrAssets/slide16.png)
+![](BenOrAssets/slide16.png)
 
 </div>
 
@@ -867,7 +867,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/BenOrAssets/slide17.png)
+![](BenOrAssets/slide17.png)
 
 </div>
 
@@ -886,7 +886,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/BenOrAssets/slide18.png)
+![](BenOrAssets/slide18.png)
 
 </div>
 
@@ -906,7 +906,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/BenOrAssets/slide18.png)
+![](BenOrAssets/slide18.png)
 
 </div>
 
@@ -924,7 +924,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/BenOrAssets/slide19.png)
+![](BenOrAssets/slide19.png)
 
 </div>
 
@@ -943,7 +943,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/BenOrAssets/slide20.png)
+![](BenOrAssets/slide20.png)
 
 </div>
 
@@ -963,7 +963,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/BenOrAssets/slide21.png)
+![](BenOrAssets/slide21.png)
 
 </div>
 
@@ -982,7 +982,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-![](/BenOrAssets/slide22.png)
+![](BenOrAssets/slide22.png)
 
 </div>
 
@@ -1121,13 +1121,13 @@ It runs a loop of three phases until it decides.
 
 ## CIL - Algorithm
 
-![width:500](/ChorIsraeliLiAssets/chor_israeli_li_algorithm.png)
+![width:500](ChorIsraeliLiAssets/chor_israeli_li_algorithm.png)
 
 </div>
 
 <div class="col">
 
-![](/ChorIsraeliLiAssets/chor_israeli_li_visualization.png)
+![](ChorIsraeliLiAssets/chor_israeli_li_visualization.png)
 
 </div>
 
@@ -1205,7 +1205,7 @@ It runs a loop of three phases until it decides.
 
 ---
 
-<!-- _class: invert title -->
+<!-- _class: title invert -->
 
 # Lockstep.
 
@@ -1329,13 +1329,13 @@ Init: $\text{mark}[0][0] = \text{mark}[1][0] = \text{true}$. Loop the three phas
 
 ## Chandra - Algorithm
 
-![width:450px](/ChandraBrachaRachmanAssets/chandra_algorithm.png)
+![width:450px](ChandraBrachaRachmanAssets/chandra_algorithm.png)
 
 </div>
 
 <div class="col">
 
-![](/ChandraBrachaRachmanAssets/chandra_visualization.png)
+![](ChandraBrachaRachmanAssets/chandra_visualization.png)
 
 </div>
 
@@ -1481,13 +1481,13 @@ Each process repeatedly votes (Phase 1) until a global threshold is crossed, the
 
 ## BR - Algorithm
 
-![width:450px](/ChandraBrachaRachmanAssets/bracha_rachman_algorithm.png)
+![width:450px](ChandraBrachaRachmanAssets/bracha_rachman_algorithm.png)
 
 </div>
 
 <div class="col">
 
-![](/ChandraBrachaRachmanAssets/bracha_rachman_visualization.png)
+![](ChandraBrachaRachmanAssets/bracha_rachman_visualization.png)
 
 </div>
 
@@ -1525,7 +1525,7 @@ Repeat:
 ### What every process sees
 
 - **Common votes** — cast before $\text{total} > n^2$. About $n^2$ total. Unbiased.
-- **Extra votes** — cast after the threshold but before $P$'s final read. Up to $n^2 / \log n$ per process. Unbiased.
+- **Extra votes** — cast after the threshold but before $P$'s final read. Up to $n^2 / \log n$.
 - **Hidden votes** — flipped but unwritten when $P$ reads. At most $n - 1$. The adversary's weapon.
 
 What $P$ sees = $\text{common} + \text{extra}_P - \text{hidden}_P$.
@@ -1540,7 +1540,7 @@ What $P$ sees = $\text{common} + \text{extra}_P - \text{hidden}_P$.
 
 1. $n^2$ fair common votes build a $\Theta(n)$ majority for $1$ with constant probability $p$ (normal approximation).
 2. Each process's extra-vote walk stays within $\pm 2n$ with probability $\geq 1 - 1/n^2$. Union bound: works for **all** processes with probability $\geq 1 - 1/n$.
-3. Hidden votes per process $\leq n - 1$ — cannot flip a $\Theta(n)$ majority.
+3. Hidden votes $\leq n - 1$ — cannot flip a $\Theta(n)$ majority.
 4. Every process sees a positive net vote for $1$ → all output $1$.
 
 **Intuition:** the common votes set the verdict. Extras and hidden votes are perturbations bounded below the verdict's margin. By symmetry, the same holds for $0$. So $\epsilon = \Omega(1)$.
