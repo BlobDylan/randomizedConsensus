@@ -15,6 +15,14 @@ Overcoming impossibility using randomization
 
 ---
 
+## Disclaimer
+
+- **Theoretical Focus:** Today’s discussion explores the core concepts and underlying logic of the subject.
+
+- **Practical Foundation:** While the framework is theoretical, these principles drive real-world applications and industry standards.
+
+---
+
 ## Lecture Agenda
 
 ### Rolling the Dice on Agreement
@@ -34,7 +42,7 @@ Overcoming impossibility using randomization
 
 ## The Consensus Problem & The FLP Wall
 
-Foundational concepts and challenges
+Defining the three pillars and the deterministic impossibility.
 
 ---
 
@@ -56,6 +64,18 @@ Foundational concepts and challenges
 1. **Agreement**: All deciding processes choose the same value
 2. **Termination**: All non-faulty processes eventually decide
 3. **Validity**: The common output must be an input from at least one process
+
+\* There are different versions of these definitions, we will focus on this definition and later change **Termination** to accomodate the randomized setting
+
+---
+
+## Thinking Critically
+
+### Trivial Solutions for 2/3 Conditions
+
+- **Agreement + Validity (No Termination)**:
+- **Agreement + Termination (No Validity)**:
+- **Termination + Validity (No Agreement)**:
 
 ---
 
@@ -82,6 +102,30 @@ The adversary is a function from partial executions to operations, choosing what
   - Restricted power (e.g., cannot see future coin flips or internal states)
   - Used to analyze randomized algorithms under fairer conditions
 
+**IMPORANT :** The adversary cannot change the message content (not Byzantine)
+
+---
+
+<!-- _class: split -->
+
+<div class="col">
+
+## Synchronous
+
+- **Timing**: Known, finite time bounds for message delivery
+- **Coordination**: Operations occur in distinct, coordinated rounds
+
+</div>
+
+<div class="col">
+
+## Asynchronous
+
+- **Timing**: Messages can be delayed arbitrarily
+- **Robustness**: No assumptions about timing; messages / reads from registries
+
+</div>
+
 ---
 
 ## Communication Models
@@ -94,31 +138,6 @@ The adversary is a function from partial executions to operations, choosing what
 - **Shared Memory**:
   - Implicit communication via shared registers (hardware)
   - Analogous impossibility results by Loui and Abu to FLP
-  - **Wait-Free**: Can achieve consensus for up to $n-1$ crashes
-
----
-
-<!-- _class: split -->
-
-<div class="col">
-
-## Synchronous
-
-- **Timing**: Known, finite time bounds for message delivery
-- **Coordination**: Operations occur in distinct, coordinated rounds
-- **Trade-off**: Faster and simpler, but fragile if network delays exceed limits
-
-</div>
-
-<div class="col">
-
-## Asynchronous
-
-- **Timing**: Messages can be delayed arbitrarily
-- **Robustness**: No assumptions about timing; messages / reads from registries
-- **Trade-off**: More robust for unpredictable networks (e.g., Internet)
-
-</div>
 
 ---
 
@@ -475,8 +494,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 **Where do we go from here?**
 
 - The FLP Theorem proves deterministic consensus is impossible under these strict asynchronous conditions.
-- **The Solution:** We must relax our assumptions.
-- _Next up:_ Exploring **Randomized Consensus** (e.g., Ben-Or's Algorithm) to bypass the FLP impossibility and achieve consensus with high probability.
+- **The Solution:** Introducing randomization
 
 ---
 
@@ -497,7 +515,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 - ~~**Part 1: The Consensus Problem & The FLP Wall**~~
   - Defining the three pillars and the deterministic impossibility.
 - **Part 2: Cheating the System with Randomization**
-  - Models of the adversary and Ben-Or's pioneering protocol.
+  - The randomized setting & Ben-Or's pioneering protocol.
 - **Part 3: The Shared Memory Race**
   - Wait-free protocols and defeating adversaries with shared coins.
 
@@ -508,6 +526,35 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 # Part 2
 
 ## Cheating the System with Randomization
+
+The randomized setting & Ben-Or's pioneering protocol.
+
+---
+
+## The Randomized Setting
+
+- **Probabilistic Execution:** Processes can now "flip a coin" to make non-deterministic decisions.
+- **Algorithm Types:**
+  - **Monte Carlo:** Guaranteed runtime, but with a small probability of error.
+  - **Las Vegas:** Guaranteed correctness, but with a variable (probabilistic) runtime.
+
+---
+
+## The Randomized Setting
+
+- **Termination Criteria:**
+  - Algorithm always reaches a correct consensus, though the time to finish is probabilistic (probability approaches to 1).
+
+---
+
+## Shared Coin Mechanisms
+
+- **Weak Shared Coin:**
+  - Guarantees that all processes agree on the same coin value with at least a **constant probability** (e.g., $>\frac{1}{2} + \epsilon$).
+  - An adversary may still influence the outcome, but cannot determine it completely.
+- **Strong Shared Coin:**
+  - Provides a **perfectly uniform** outcome; all processes see the same bit (0 or 1) with exactly $1/2$ probability.
+  - Resilient against a powerful adversary who can observe and schedule processes to try and bias the result.
 
 ---
 
@@ -530,6 +577,19 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 ---
 
+## Algorithm Setting
+
+- **Communication Model:** Message Passing
+- **Randomization Model:** Local coin per process
+- **Adversary:** Strong Adversary
+- **Complexity:**
+  - **Work per iteration:** $O(n)$
+  - **Number of iterations:** $O(2^n)$ in expectation
+  - **Total work:** $O(2^n)$ total work in expectation
+- **Fault Tolerance:** Tolerates $t < n/2$ crash failures
+
+---
+
 <!-- _class: split -->
 
 <div class="col">
@@ -537,7 +597,6 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 ## Ben-Or's Algorithm
 
 - **First of its kind:** Achieves consensus with probabilistic termination against a strong adversary.
-- **Resilience:** Tolerates $t < n/2$ crash failures.
 - We'll see the algorithm through an example
 </div>
 
@@ -555,7 +614,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 ## Ben-Or Example
 
-- **Setting:** Consider a network of $5$ nodes, in this case we tolerate $f=2$ crash failures
+- **Scenario:** Consider a network of $5$ nodes, in this case we tolerate $f=2$ crash failures
 
 </div>
 
@@ -896,11 +955,11 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-## Correctness
+## Correctness - Agreement
 
 - What if a node recieves a proposal like the following
 - Is this case possible?
-- No. Because a proposal requires a majority
+- No. Because a proposal requires a majority (in step 2)
 
 </div>
 
@@ -916,7 +975,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-## Correctness
+## Correctness - Validity
 
 - Trivially, if all nodes start with the same value they immediately agree on said value
 
@@ -934,7 +993,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 <div class="col">
 
-## Correctness
+## Correctness - Termination
 
 - If there is no proposal for some node because it didn't recieve all 0's or all 1's we flip a coin
 - It is possible all nodes get the same value randomly
@@ -969,31 +1028,11 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 ---
 
-<!-- _class: split -->
-
-<div class="col">
-
-## Can we do better?
-
-- **No:** Randomized consensus is impossible in the **Asynchronous** model if there can be at least $n/2$ failures
-- To terminate each half must decide, but if they decide they violate agreement
-
-</div>
-
-<div class="col">
-
-![](BenOrAssets/slide22.png)
-
-</div>
-
----
-
 ## Recap — Part 2
 
 ### Cheating the System
 
 - **Breaking the Wall:** Using randomization to achieve "Probabilistic Termination."
-- **Adversary Models:** Strong (sees everything) vs. Weak (blind to internal coin flips).
 - **Ben-Or's Protocol:**
   - $t < n/2$ resilience in message-passing.
   - Two-stage rounds (Voting & Ratification) + local coins.
@@ -1020,7 +1059,7 @@ Deterministic consensus is impossible in the asynchronous model even for binary 
 
 ## The Shared Memory Race
 
-Three algorithms, one consistent template.
+Wait-free protocols and defeating adversaries with shared coins.
 
 ---
 
@@ -1030,24 +1069,9 @@ Three algorithms, one consistent template.
 
 - Tolerate up to $n - 1$ crashes — any process finishes alone.
 - Memory survives the processes that wrote it.
-- No network. No partitions.
 - Goal: drive shared state into a configuration that **announces the decision**.
 
 **Intuition:** dead processes still "speak" through the registers they left behind. A late-arriving process can read those registers and decide without waiting for anyone.
-
----
-
-## How we'll cover each algorithm
-
-### One template, three times
-
-For **Chor–Israeli–Li**, **Chandra**, and **Bracha–Rachman** we cover, in order:
-
-1. **Settings** — communication model and registers.
-2. **Adversary** — what it can see and do.
-3. **Complexity** — work, rounds, probability.
-4. **Algorithm** — phase by phase, each with intuition.
-5. **Correctness** — Agreement, Validity, Termination, each with intuition.
 
 ---
 
@@ -1061,21 +1085,42 @@ A wait-free race through rounds.
 
 ---
 
-## CIL — Settings
+<!-- _class: split -->
 
-### Communication model
+<div class="col">
 
-- **Shared memory**, not message passing.
-- One **single-writer multi-reader register** per process.
-- Register holds the pair $(\text{preference}, \text{round})$.
-- Inputs may take **any value** — not restricted to $\{0, 1\}$.
-- Wait-free up to $n - 1$ crashes.
+## Chor–Israeli–Li
 
-**Intuition:** the register is the only channel. Writing to it is broadcast; reading $n$ of them is a snapshot. Dead writers' registers remain readable.
+- **Benny Chor:** Israeli researcher at Tel Aviv University, pioneering randomized distributed algorithms.
+- **Amos Israeli:** Israeli researcher at Netanya Academic College, focusing on self-stabilizing systems.
+- **Ming Li:** Chinese-Canadian researcher at the University of Waterloo, expert in Kolmogorov complexity.
+
+</div>
+
+<div class="col">
+
+![width:100](ChorIsraeliLiAssets/benny_chor_portrait.jpg)
+![width:100](ChorIsraeliLiAssets/amos_israeli_portrait.jpeg)
+![width:100](ChorIsraeliLiAssets/ming_li_portrait.png)
+
+</div>
 
 ---
 
-## CIL — Adversary
+## Algorithm Setting
+
+- **Communication Model:** Shared Memory
+- **Randomization Model:** Local coin per process
+- **Adversary:** Weak Adversary
+- **Complexity:**
+  - **Work per iteration:** $O(n)$
+  - **Number of iterations:** $O(n)$ in expectation
+  - **Total work:** $O(n^2)$ in expectation
+- **Fault Tolerance:** $n-1$
+
+---
+
+## Adversary
 
 ### Weak adversary
 
@@ -1087,39 +1132,11 @@ A wait-free race through rounds.
 
 ---
 
-## CIL — Complexity
-
-### Cost in iterations and total work
-
-- **Iterations until a leader emerges:** $O(n)$ in expectation.
-- **Work per iteration:** one write + $n$ reads = $O(n)$.
-- **Total expected work:** $O(n^2)$.
-- **Termination probability:** $1$ (eventually, with probability $1$).
-
-**Intuition:** $n$ runners each step forward with probability $\tfrac{1}{2n}$. After $O(n)$ iterations, one runner gets a $2$-step lead with constant probability — that triggers a decision.
-
----
-
-## CIL — Algorithm overview
-
-### State and loop
-
-Each process keeps:
-
-- $\text{preference}$ — initially the input value.
-- $\text{round}$ — initially $1$.
-
-It runs a loop of three phases until it decides.
-
-**Intuition:** _announce → check → adopt-or-advance._ The race never speeds up — it just keeps cycling until a leader pulls clearly ahead.
-
----
-
 <!-- _class: split -->
 
 <div class="col">
 
-## CIL - Algorithm
+## Algorithm
 
 ![width:500](ChorIsraeliLiAssets/chor_israeli_li_algorithm.png)
 
@@ -1127,13 +1144,17 @@ It runs a loop of three phases until it decides.
 
 <div class="col">
 
-![](ChorIsraeliLiAssets/chor_israeli_li_visualization.png)
+**Intuition:** _announce → check → adopt-or-advance._ The race never speeds up it just keeps cycling until a leader pulls clearly ahead.
 
 </div>
 
 ---
 
-## CIL — Phase 1: Announce & Observe
+![](ChorIsraeliLiAssets/chor_israeli_li_visualization.png)
+
+---
+
+## Phase 1: Announce & Observe
 
 ### Steps
 
@@ -1145,7 +1166,7 @@ It runs a loop of three phases until it decides.
 
 ---
 
-## CIL — Phase 2: Has the race been won?
+## Phase 2: Has the race been won?
 
 ### Steps
 
@@ -1157,7 +1178,7 @@ It runs a loop of three phases until it decides.
 
 ---
 
-## CIL — Phase 3: Adopt + maybe advance
+## Phase 3: Adopt + maybe advance
 
 ### Steps
 
@@ -1169,7 +1190,7 @@ It runs a loop of three phases until it decides.
 
 ---
 
-## CIL — Correctness: Agreement
+## Correctness: Agreement
 
 ### Argument
 
@@ -1181,7 +1202,7 @@ It runs a loop of three phases until it decides.
 
 ---
 
-## CIL — Correctness: Validity
+## Correctness: Validity
 
 ### Argument
 
@@ -1193,7 +1214,7 @@ It runs a loop of three phases until it decides.
 
 ---
 
-## CIL — Correctness: Termination
+## Correctness: Termination
 
 ### Argument
 
@@ -1213,7 +1234,7 @@ It runs a loop of three phases until it decides.
 
 ---
 
-## CIL fails under a strong adversary
+## Fails under a strong adversary
 
 ### The lockstep attack
 
@@ -1244,7 +1265,7 @@ We need a primitive the adversary cannot freeze.
   - $\Pr[\text{every process outputs } v] \geq \epsilon$
   - for some constant $\epsilon > 0$.
 
-**Intuition:** not a fair coin. Not a perfect coin. Just a primitive where, with constant probability, _all_ processes see the same value. That is enough to crack lockstep — disagreement is broken with probability $\epsilon$ per call.
+**Intuition:** not a fair coin. Not a perfect coin. Just a primitive where, with constant probability, _all_ processes see the same value. That is enough ensure disagreement is broken with probability $\epsilon$ per call.
 
 ---
 
@@ -1254,72 +1275,38 @@ We need a primitive the adversary cannot freeze.
 
 ## Chandra
 
-A wait-free binary consensus **framework** that calls a weak shared coin once per round.
+## A wait-free binary consensus **framework** that calls a weak shared coin once per round.
 
 ---
 
-## How Chandra and Bracha–Rachman fit together
+<!-- _class: split -->
 
-### Two nested algorithms
+<div class="col">
 
-- **Chandra** is a _consensus framework_. Each round, processes that disagree call a subroutine: $\text{SharedCoin}_r()$.
-- **Bracha–Rachman** is a _weak shared coin_ — one specific implementation of that subroutine.
-- Plug BR into Chandra → wait-free binary consensus, strong adversary, $O(n^2 \log n)$.
+## Tushar Deepak Chandr
 
-**Intuition:** Chandra is the chassis; Bracha–Rachman is the engine. Either is useless alone. We cover them in that order.
+![width:400](ChandraBrachaRachmanAssets/chandra_portrait.jpeg)
 
----
+</div>
 
-## Chandra — Settings
+<div class="col">
 
-### Communication model
+- **Background:** Indian-American researcher; PhD from Cornell and Dijkstra Prize winner (2010).
 
-- **Shared memory**, not message passing.
-- Two arrays of **multi-writer bits**: $\text{mark}[0][r]$ and $\text{mark}[1][r]$ for each round $r$.
-- Bits are **monotonic** — only flip false → true.
-- **Binary** consensus (inputs in $\{0, 1\}$).
-- Wait-free up to $n - 1$ crashes.
-
-**Intuition:** "preference $b$ has reached round $r$" is a single global fact, written once and visible to everyone. Concurrent writes are safe — everyone writes "true."
+</div>
 
 ---
 
-## Chandra — Adversary
+## Algorithm Setting
 
-### Strong adversary
-
-- Sees process states, registers, past coin outcomes, and the schedule.
-- **Cannot** predict future outputs of $\text{SharedCoin}_r$.
-
-**Intuition:** Chandra confronts the worst case. Its only edge is that the _next_ shared-coin call is unpredictable to the adversary, even when everything else is exposed.
-
----
-
-## Chandra — Complexity
-
-### Cost per round and overall
-
-- **Operations per round:** $O(1)$ (a few mark-bit reads and writes).
-- **Expected rounds to converge:** $O(1/\epsilon) = O(1)$.
-- **Probability of termination:** $1$.
-- Total cost is dominated by the **shared coin subroutine**.
-
-**Intuition:** the framework itself is cheap. Each round it makes one expensive call (the coin) and a handful of free bit operations. So the coin's cost = the algorithm's cost.
-
----
-
-## Chandra — Algorithm overview
-
-### State and loop
-
-Each process keeps:
-
-- $p$ — preference, initially the input.
-- $r$ — round, initially $0$.
-
-Init: $\text{mark}[0][0] = \text{mark}[1][0] = \text{true}$. Loop the three phases until you decide.
-
-**Intuition:** _plant your flag → look around → maybe flip the coin and check you didn't lap your own team._
+- **Communication Model:** Shared memory
+- **Randomization Model:** Shared coin
+- **Adversary:** Strong Adversary
+- **Complexity:**
+  - **Work per iteration:** $O(SharedCoin)$
+  - **Number of iterations:** $O(1)$ in expectation
+  - **Total work:** $O(SharedCoin)$ total work in expectation
+- **Fault Tolerance:** Tolerates $n-1$ crash failures
 
 ---
 
@@ -1335,9 +1322,13 @@ Init: $\text{mark}[0][0] = \text{mark}[1][0] = \text{true}$. Loop the three phas
 
 <div class="col">
 
-![](ChandraBrachaRachmanAssets/chandra_visualization.png)
+**Intuition:** _plant your flag → look around → maybe flip the coin and check you didn't lap your own team._
 
 </div>
+
+---
+
+![](ChandraBrachaRachmanAssets/chandra_visualization.png)
 
 ---
 
@@ -1426,52 +1417,40 @@ The weak shared coin Chandra calls every round.
 
 ---
 
-## BR — Settings
+<!-- _class: split -->
 
-### Communication model
+<div class="col">
 
-- **Shared memory**, not message passing.
-- One **single-writer register** per process: $r[p] = (\text{flips}, \text{ones})$, init $(0, 0)$.
-- $\text{flips}$ counts coin flips so far; $\text{ones}$ counts how many came up $1$.
-- **Output:** each process returns $0$ or $1$.
+## Gabriel Bracha
 
-**Intuition:** every process maintains a public running tally of its own contributions. The collective output is a vote count, not a leader election.
+Israeli Cornell PhD who pioneered fault-tolerant distributed systems and the first randomized consensus protocols for Byzantine failures.
 
----
+## Ophir Rachman
 
-## BR — Adversary
+Israeli Technion PhD expert in shared-memory objects and optimizing the complexity of randomized shared coin mechanisms.
 
-### Strong adversary — with one specific weapon
+</div>
 
-- Sees full state, all past coin outcomes, the schedule.
-- **Crucial gap:** between flipping a coin and writing it, the adversary can see the outcome and selectively delay the write to **hide** the vote.
+<div class="col">
 
-**Intuition:** the adversary cannot bias coins, but it can decide _which fair coins reach the public ledger_. "Hidden votes" are its only weapon.
+![width:250](ChandraBrachaRachmanAssets/gabriel_bracha_portrait.svg)
 
----
+![width:250](ChandraBrachaRachmanAssets/ophir_rachman_portrait.jpeg)
 
-## BR — Complexity
-
-### Cost and probability
-
-- **Total votes cast:** $\Theta(n^2)$.
-- **Batch size:** $n / \log n$ flips per termination check.
-- **Termination check cost:** $O(n)$ reads.
-- **Amortized cost per vote:** $O(\log n)$.
-- **Total expected work:** $O(n^2 \log n)$.
-- **Agreement probability:** $\epsilon = \Omega(1)$ for each value.
-
-**Intuition:** without batching, checking after every vote would cost $O(n^3)$. Batching trades off slightly more "extra" votes for vastly cheaper bookkeeping.
+</div>
 
 ---
 
-## BR — Algorithm overview
+## Algorithm Setting
 
-### State and structure
-
-Each process repeatedly votes (Phase 1) until a global threshold is crossed, then takes one final reading (Phase 2) and outputs a majority bit.
-
-**Intuition:** generate so many fair votes that the law of large numbers builds a $\Theta(n)$-sized majority — too large for the adversary's $n - 1$ hidden votes to flip.
+- **Communication Model:** Shared memory
+- **Randomization Model:** Shared coin
+- **Adversary:** Strong Adversary
+- **Complexity:**
+  - **Work per iteration:** $O(SharedCoin)$
+  - **Number of iterations:** $O(1)$ in expectation
+  - **Total work:** $O(SharedCoin)$ total work in expectation
+- **Fault Tolerance:** Tolerates $n-1$ crash failures
 
 ---
 
@@ -1487,9 +1466,25 @@ Each process repeatedly votes (Phase 1) until a global threshold is crossed, the
 
 <div class="col">
 
-![](ChandraBrachaRachmanAssets/bracha_rachman_visualization.png)
+**Intuition:** generate so many fair votes that the law of large numbers builds a $\Theta(n)$-sized majority — too large for the adversary's $n - 1$ hidden votes to flip.
 
 </div>
+
+---
+
+![](ChandraBrachaRachmanAssets/bracha_rachman_visualization.png)
+
+---
+
+## How Chandra and Bracha–Rachman fit together
+
+### Two nested algorithms
+
+- **Chandra** is a _consensus framework_. Each round, processes that disagree call a subroutine: $\text{SharedCoin}_r()$.
+- **Bracha–Rachman** is a _weak shared coin_ — one specific implementation of that subroutine.
+- Plug BR into Chandra → wait-free binary consensus, strong adversary, $O(n^2 \log n)$.
+
+**Intuition:** Chandra is the chassis; Bracha–Rachman is the engine. Either is useless alone. We cover them in that order.
 
 ---
 
@@ -1582,8 +1577,6 @@ What $P$ sees = $\text{common} + \text{extra}_P - \text{hidden}_P$.
 <!-- _class: title -->
 
 # Thank You!
-
-## Any Questions?
 
 **Daniel & Dylan**
 Overcoming impossibility through randomization
