@@ -1190,6 +1190,367 @@ A wait-free race through rounds.
 
 ---
 
+<!-- _class: split -->
+
+<div class="col">
+
+## Example
+
+- **8** processes denoted by the circles
+- processes current preference is a color, blue or orange
+- Round number is visualized by the vertical scale
+- For simplicity we will not show the registers, they contain $(preference,round)$ pairs for each process
+
+</div>
+
+<div class="col">
+
+![](ChorIsraeliLiAssets/slide1.png)
+
+</div>
+
+---
+
+<!-- _class: split -->
+
+<div class="col">
+
+## Example
+
+- Mostly, processes do nothing, they flip a coin and only advance with small probability
+- At some point $p6$ gets lucky and advances, it also updates the register
+
+</div>
+
+<div class="col">
+
+![](ChorIsraeliLiAssets/slide2.png)
+
+</div>
+
+---
+
+<!-- _class: split -->
+
+<div class="col">
+
+## Example
+
+- Mostly, processes do nothing, they flip a coin and only advance with small probability
+- At some point $p6$ gets lucky and advances, it also updates the register
+
+</div>
+
+<div class="col">
+
+![](ChorIsraeliLiAssets/slide3.png)
+
+</div>
+
+---
+
+<!-- _class: split -->
+
+<div class="col">
+
+## Example
+
+- Mostly, processes do nothing, they flip a coin and only advance with small probability
+- At some point $p6$ gets lucky and advances, it also updates the register
+- When a node sees a unanimous value at the highest round it adopts it
+
+</div>
+
+<div class="col">
+
+![](ChorIsraeliLiAssets/slide4.png)
+
+</div>
+
+---
+
+<!-- _class: split -->
+
+<div class="col">
+
+## Example
+
+- Mostly, processes do nothing, they flip a coin and only advance with small probability
+- At some point $p6$ gets lucky and advances, it also updates the register
+- When a node sees a unanimous value at the highest round it adopts it
+
+</div>
+
+<div class="col">
+
+![](ChorIsraeliLiAssets/slide5.png)
+
+</div>
+
+---
+
+<!-- _class: split -->
+
+<div class="col">
+
+## Example
+
+- Mostly, processes do nothing, they flip a coin and only advance with small probability
+- At some point $p6$ gets lucky and advances, it also updates the register
+- When a node sees a unanimous value at the highest round it adopts it
+
+</div>
+
+<div class="col">
+
+![](ChorIsraeliLiAssets/slide6.png)
+
+</div>
+
+---
+
+<!-- _class: split -->
+
+<div class="col">
+
+## Example
+
+- Mostly, processes do nothing, they flip a coin and only advance with small probability
+- At some point $p6$ gets lucky and advances, it also updates the register
+- When a node sees a unanimous value at the highest round it adopts it
+
+</div>
+
+<div class="col">
+
+![](ChorIsraeliLiAssets/slide7.png)
+
+</div>
+
+---
+
+<!-- _class: split -->
+
+<div class="col">
+
+## Example
+
+- We think of the safety zone as the highest round and one below it
+- Now $p6$ advanced by chance we'll imagine the safety zone is on rounds 3 and 2
+
+</div>
+
+<div class="col">
+
+![](ChorIsraeliLiAssets/slide8.png)
+
+</div>
+
+---
+
+<!-- _class: split -->
+
+<div class="col">
+
+## Example
+
+- We think of the safety zone as the highest round and one below it
+- Now $p6$ advanced by chance we'll imagine the safety zone is on rounds 3 and 2
+
+</div>
+
+<div class="col">
+
+![](ChorIsraeliLiAssets/slide9.png)
+
+</div>
+
+---
+
+<!-- _class: split -->
+
+<div class="col">
+
+## Example
+
+- We think of the safety zone as the highest round and one below it
+- Now $p6$ advanced by chance we'll imagine the safety zone is on rounds 3 and 2
+- Other nodes may jump asynchronously
+
+</div>
+
+<div class="col">
+
+![](ChorIsraeliLiAssets/slide10.png)
+
+</div>
+
+---
+
+<!-- _class: split -->
+
+<div class="col">
+
+## Example
+
+- We think of the safety zone as the highest round and one below it
+- Now $p6$ advanced by chance we'll imagine the safety zone is on rounds 3 and 2
+- Other nodes may jump asynchronously
+
+</div>
+
+<div class="col">
+
+![](ChorIsraeliLiAssets/slide11.png)
+
+</div>
+
+---
+
+<!-- _class: split -->
+
+<div class="col">
+
+## Example
+
+- If a node sees a unanimous descision in the safety zone it decides it
+
+</div>
+
+<div class="col">
+
+![](ChorIsraeliLiAssets/slide12.png)
+
+</div>
+
+---
+
+<!-- _class: split -->
+
+<div class="col">
+
+## Example
+
+- If a node sees a unanimous descision in the safety zone it decides it
+
+</div>
+
+<div class="col">
+
+![](ChorIsraeliLiAssets/slide13.png)
+
+</div>
+
+---
+
+<!-- _class: split -->
+
+<div class="col">
+
+## Example
+
+- If a node sees a unanimous descision in the safety zone it decides it
+
+</div>
+
+<div class="col">
+
+![](ChorIsraeliLiAssets/slide14.png)
+
+</div>
+
+---
+
+<!-- _class: split -->
+
+<div class="col">
+
+## Example
+
+- If a node sees a unanimous descision in the safety zone it decides it
+
+</div>
+
+<div class="col">
+
+![](ChorIsraeliLiAssets/slide15.png)
+
+</div>
+
+---
+
+<!-- _class: split -->
+
+<div class="col">
+
+## Example
+
+- If a node sees a unanimous descision in the safety zone it decides it
+
+</div>
+
+<div class="col">
+
+![](ChorIsraeliLiAssets/slide16.png)
+
+</div>
+
+---
+
+<!-- _class: split -->
+
+<div class="col">
+
+## Example
+
+- If a node sees a unanimous descision in the safety zone it decides it
+
+</div>
+
+<div class="col">
+
+![](ChorIsraeliLiAssets/slide17.png)
+
+</div>
+
+---
+
+<!-- _class: split -->
+
+<div class="col">
+
+## Example
+
+- If a node sees a unanimous descision in the safety zone it decides it
+
+</div>
+
+<div class="col">
+
+![](ChorIsraeliLiAssets/slide18.png)
+
+</div>
+
+---
+
+<!-- _class: split -->
+
+<div class="col">
+
+## Example
+
+- If a node sees a unanimous descision in the safety zone it decides it
+
+</div>
+
+<div class="col">
+
+![](ChorIsraeliLiAssets/slide19.png)
+
+</div>
+
+---
+
 ## Correctness: Agreement
 
 ### Argument
